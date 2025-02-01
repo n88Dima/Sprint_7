@@ -41,9 +41,6 @@ class TestCourierLogin:
         assert response.status_code == 400, f"Ожидали 400, а пришел {response.status_code}"
         assert response.json().get('message') == Errors.COURIER_LOGIN_EMPTY_DATA, f"Ожидали {Errors.COURIER_LOGIN_EMPTY_DATA}, а получили {response.json().get('message')}"
 
-
-
-
     @allure.title("Провека авторизации с неправильным логином")
     @allure.description("Проверка атворизации курьера с неправильным логином(регистрируем курьера а потом входим не с тем логином)")
     def test_login_courier_with_different_login(self):
